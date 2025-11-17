@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <h2>JS의 Core객체 - String</h2>
+    <script>
+        /*
+        퀴즈] 아래 이메일 주소에서 @와 . 사이에 있는 값만
+        추출하여 출력하는 프로그램을 작성하시오.
+        xxx@yyy.co.kr 이라면 yyy만 출력되어야 한다.
+        */
+        var emailArray = ["kim@naver.com", "sung@hanmail.net",
+            "park@ikosmo.co.kr"];
+
+        console.log("<h2>연습문제>도메인 추출하기</h2>");
+        //익명함수로 정의함
+        var getDomainStr = function(emailArr) {
+            for(var i=0; i<emailArr.length; i++){
+                var email = emailArr[i];
+                var domain = "";
+                
+                //방법1 : indexOf()를 사용하는 방법
+                var atIndex = email.indexOf('@');
+                var dotIndex = email.indexOf('.', atIndex); // @ 이후의 첫 .을 찾음
+                if (atIndex !== -1 && dotIndex !== -1) {
+                    domain = email.substring(atIndex + 1, dotIndex);
+                }
+                
+                //방법2 : split()을 사용하는 방법
+                var parts = email.split('@');
+                if (parts.length === 2) {
+                    var domainParts = parts[1].split('.');
+                    if (domainParts.length > 1) {
+                        domain = domainParts[0];
+                    }
+                }
+                
+                console.log(domain);
+            }
+        };
+
+        getDomainStr(emailArray);
+    </script>
+</body>
+</html>
