@@ -31,17 +31,28 @@
                 }
                 
                 //방법2 : split()을 사용하는 방법
-                var parts = email.split('@');
-                if (parts.length === 2) {
-                    var domainParts = parts[1].split('.');
-                    if (domainParts.length > 1) {
-                        domain = domainParts[0];
-                    }
+                for(let eStr of emailArray){
+                    //이메일을 @으로 1차 split
+                    let firstArr = eStr.split('@');
+                    //도메인 부분을 이용해서 .으로 2차 split
+                    let secondArr = firstArr[1].split('.');
+                    //도메인의 첫번째 문자열 얻기
+                    const resultStr2 = secondArr[0];
+                    console.log('split이용, resultStr2');
                 }
+               
+               
+                // var parts = email.split('@');
+                // if (parts.length === 2) {
+                //     var domainParts = parts[1].split('.');
+                //     if (domainParts.length > 1) {
+                //         domain = domainParts[0];
+                //     }
+                // }
                 
                 console.log(domain);
             }
-        };
+         };
 
         getDomainStr(emailArray);
     </script>
