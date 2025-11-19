@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <table border="1">
+        <tr>
+            <td>n</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>n<sup>2</sup></td>
+            <td>1</td>
+            <td>4</td>
+            <td>9</td>
+            <td>16</td>
+        </tr>
+    </table> -->
+    <h1>document.write()로 표 만들기</h1>
+    <hr>
+    <script>
+        var str = "";
+        /*
+        더블이나 싱글쿼테이션이 겹쳐지면 에러가 발생하므로 둘중 하나만 
+        사용하거나, 이스케이프 시퀀스를 통해 특수기호임을 알려줘야 한다. 
+        아니면 HTML속성값에 싱글이나 더블을 쓰지않는 방법도 있다. 
+        */
+        str += "<table border=\"1\">";
+        str += "  <tr>";
+        str += "    <td>n</td>";
+        for(var i=0 ; i<=9 ; i++){
+            str += "<td>"+i+"</td>";
+        }
+        str += "  </tr>";
+        /////////////////////////////////////////////////////
+        str += "  <tr>";
+        str += "    <td>n<sup>2</sup></td>";
+        for(var i=0 ; i<=9 ; i++){
+            str += "<td>"+(i*i)+"</td>";
+        }
+        str += "  </tr>";
+        str += "</table>";
+        document.write(str);
+    </script>
+</body>
+</html>
