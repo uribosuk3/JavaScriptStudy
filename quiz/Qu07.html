@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //if문을 통한 구현
+        function big1(n1, n2){
+            console.log(parseInt(n1));
+            console.log(parseInt(n2));
+
+            if(parseInt(n1) > parseInt(n2)){
+                return n1;
+            }
+            else{
+                return n2;
+            }
+        }
+        //삼항연산자를 통한 구현
+        var big2 = function(num1, num2){
+            //(조건) ? 참일때 : 거짓일때
+            var result = (parseInt(num1) > parseInt(num2)) ? num1 : num2;
+            return result;
+        }
+    </script>
+    <script>
+        var b1 = big1("625", "555");
+        document.write("큰수는?"+ b1);
+        document.write("<br>");
+        var b2 = big2("625", "555");
+        document.write("큰수는?"+ b2);
+    </script>
+</body>
+</html>
